@@ -5,10 +5,12 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "firebase": "^6.2.4",
-    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "reactstrap": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "^13.2.0"
+    "eslint-config-airbnb-base": "^13.2.0",
+    "node-sass": "^4.12.0"
   }
 }
