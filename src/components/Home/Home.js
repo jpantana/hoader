@@ -11,7 +11,7 @@ class Home extends React.Component {
   };
 
   render() {
-    const singleLink = '/scat/12345'; // ${scat.id} for example
+    const singleLink = '/stuff/12345'; // ${scat.id} for example
     return (
       <div className="Home">
         <h1>Home</h1>
