@@ -11,9 +11,9 @@ import firebase from 'firebase/app';
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-// import SingleScat from '../components/SingleScat/SingleScat';
-// import EditScat from '../components/EditScat/EditScat';
-// import NewScat from '../components/NewScat/NewScat';
+import MyStuff from '../components/MyStuff/MyStuff';
+import EditStuff from '../components/EditStuff/EditStuff';
+import NewStuff from '../components/NewStuff/NewStuff';
 
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -71,9 +71,9 @@ class App extends React.Component {
                   <PublicRoute path="/auth" component={Auth} authed={authed} />
                   <PrivateRoute path="/home" component={Home} authed={authed} />
 
-                  {/* <PrivateRoute path="/new" component={NewStuff} authed={authed} />
+                  <PrivateRoute path="/new" component={NewStuff} authed={authed} />
+                  <PrivateRoute path="/stuff" component={MyStuff} authed={authed} />
                   <PrivateRoute path="/edit/:id" component={EditStuff} authed={authed} />
-                  <PrivateRoute path="/scat/:id" component={SingleStuff} authed={authed} /> */}
 
                   <Redirect from="*" to="/auth" />
                 </Switch>
