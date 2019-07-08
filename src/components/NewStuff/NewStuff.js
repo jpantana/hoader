@@ -16,6 +16,7 @@ import './NewStuff.scss';
 class NewStuff extends React.Component {
   state = {
     redirectToReferrer: false,
+    newItem: {}, // just added this
   }
 
   render() {
@@ -29,6 +30,7 @@ class NewStuff extends React.Component {
       };
       this.setState({
         redirectToReferrer: !this.state.redirectToReferrer,
+        newItem: this.newItem,
       });
       mystuffData.addNewStuff(newItem).then((resp) => {
         // clears form
@@ -40,7 +42,8 @@ class NewStuff extends React.Component {
     };
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer === true) {
-      return <MyStuff to="/stuff" />;
+      // this.props.history.push will fix this
+      return <MyStuff to="/stuff" newItem = { this.state.item }/>;
     }
     return (
       <div className="NewStuff">
