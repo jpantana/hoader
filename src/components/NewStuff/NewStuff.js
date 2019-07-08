@@ -42,8 +42,10 @@ class NewStuff extends React.Component {
     };
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer === true) {
+      console.error(this.props.history.push);
       // this.props.history.push will fix this
-      return <MyStuff to="/stuff" newItem = { this.state.item }/>;
+      // return <MyStuff to="/stuff" newItem = { this.props.history.push }/>;
+      this.props.history.push('/stuff'); // not worign check erros
     }
     return (
       <div className="NewStuff">
