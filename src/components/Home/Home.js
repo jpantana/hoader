@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// import mystuffShape from '../../helpers/propz/mystuffShape';
+
 import './Home.scss';
 
 class Home extends React.Component {
+  state = {
+    myStuff: {},
+  }
+
   editEvent = (e) => {
     e.preventDefault();
     const orderId = '12345';

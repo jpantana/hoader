@@ -1,0 +1,20 @@
+{
+  "item1": {
+    "name": "Lampstand",
+    "price": 3000,
+    "description": "A handsome piece lovingly aquired from my neigbors trash can",
+    "imageUrl": "https://i.pinimg.com/originals/01/a5/9b/01a59b2f9f9ad673b75c27b82dab0042.jpg"
+  },
+  "item2": {
+    "name": "Hammock",
+    "price": 2500,
+    "description": "An elegant tangle of comfort sturdy enough to support the most robust of humans",
+    "imageUrl": "https://previews.123rf.com/images/dbrus/dbrus1207/dbrus120700097/14363244-old-hammock-hanging-in-the-garden.jpg"
+  },
+  "item3": {
+    "name": "Millennium Falcon antique toy",
+    "price": 25500,
+    "description": "OK Chewie, engage the hyper drive, cause this baby is slick",
+    "imageUrl": "https://i.etsystatic.com/13120727/r/il/6d47d3/1661867403/il_1588xN.1661867403_frhf.jpg"
+  }
+}
