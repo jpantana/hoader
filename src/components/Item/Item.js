@@ -13,7 +13,7 @@ class Item extends React.Component {
 
   state = {
     isClicked: false,
-    item: '',
+    item: {},
   }
 
   render() {
