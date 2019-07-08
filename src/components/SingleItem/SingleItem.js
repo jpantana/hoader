@@ -13,8 +13,9 @@ class SingleItem extends React.Component {
 
   deleteEvent = (e) => {
     e.preventDefault();
-    console.error(this.props.item.id);
-    mystuffData.deleteStuff(this.props.item.id).then().catch(err => console.error('nothing deleted', err));
+    mystuffData.deleteStuff(this.props.item.id)
+      .then()
+      .catch(err => console.error('nothing deleted', err));
   };
 
   render() {
