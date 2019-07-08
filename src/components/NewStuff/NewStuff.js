@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -13,38 +14,33 @@ import './NewStuff.scss';
 
 class NewStuff extends React.Component {
   state = {
-    name: '',
-    description: '',
-    imageUrl: '',
-    price: 0,
+    redirectToReferrer: false,
   }
 
   render() {
     const saveNewItem = (e) => {
       e.preventDefault();
-      // this.setState({
-      //   name: document.getElementById('itemNameInput').value,
-      //   description: document.getElementById('itemDescriptionInput').value,
-      //   imageUrl: document.getElementById('itemImageUrl').value,
-      //   price: document.getElementById('itemPrice').value,
-      // });
-      // const newItem = {
-      //   name: this.state.name,
-      //   description: this.state.description,
-      //   imageUrl: this.state.imageUrl,
-      //   price: this.state.price,
-      // };
       const newItem = {
         name: document.getElementById('itemNameInput').value,
         description: document.getElementById('itemDescriptionInput').value,
         imageUrl: document.getElementById('itemImageUrl').value,
         price: document.getElementById('itemPrice').value,
       };
+      this.setState({
+        redirectToReferrer: !this.state.redirectToReferrer,
+      });
       mystuffData.addNewStuff(newItem).then((resp) => {
-        console.error(resp);
-        // change path of url to /stuff
+        // clears form
+        document.getElementById('itemNameInput').value = '';
+        document.getElementById('itemDescriptionInput').value = '';
+        document.getElementById('itemImageUrl').value = '';
+        document.getElementById('itemPrice').value = '';
       }).catch(err => console.error('no new item added', err));
     };
+    const { redirectToReferrer } = this.state;
+    if (redirectToReferrer === true) {
+      return <Redirect to="/stuff" />;
+    }
     return (
       <div className="NewStuff">
         <h1>New Stuff</h1>
