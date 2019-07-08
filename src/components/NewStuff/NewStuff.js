@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -8,6 +8,7 @@ import {
   Input,
 } from 'reactstrap';
 
+import MyStuff from '../MyStuff/MyStuff';
 import mystuffData from '../../helpers/data/mystuffData';
 
 import './NewStuff.scss';
@@ -39,7 +40,7 @@ class NewStuff extends React.Component {
     };
     const { redirectToReferrer } = this.state;
     if (redirectToReferrer === true) {
-      return <Redirect to="/stuff" />;
+      return <MyStuff to="/stuff" />;
     }
     return (
       <div className="NewStuff">
