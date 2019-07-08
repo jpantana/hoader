@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import mystuffShape from '../../helpers/propz/mystuffShape';
 import SingleItem from '../SingleItem/SingleItem';
 
+import './Item.scss';
+
 class Item extends React.Component {
   static propTypes = {
     item: PropTypes.objectOf(mystuffShape.mystuffShape),
@@ -17,7 +19,6 @@ class Item extends React.Component {
   render() {
     const { thing } = this.props;
     const singleItem = (e) => {
-      console.error(e.target.id);
       e.preventDefault();
       this.setState({
         isClicked: !this.state.isClicked,
@@ -26,12 +27,12 @@ class Item extends React.Component {
     };
     return (
       <div className="Item" onClick={ singleItem }>
-        { (this.state.isClicked === true ? <SingleItem key={ thing.id } item= { this.state.item }/> : '') }
-        <div className="col-12">
+        <div className="col nameWidth">
           <div className="card">
             <h3 id={ thing.id } className="card-header">{ thing.name }</h3>
           </div>
         </div>
+        <div className="itemBreakout">{ (this.state.isClicked === true ? <SingleItem key={ thing.id } item= { this.state.item }/> : '') }</div>
       </div>
     );
   }

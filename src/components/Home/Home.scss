@@ -1,3 +1,13 @@
 .Home {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  width: auto;
+  justify-content: space-around;
+  padding: 10px;
+
+}
+
+.homeH1, .editButton, .Link {
+  margin: auto;
+  margin-left: 20px;
 }

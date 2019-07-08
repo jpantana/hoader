@@ -20,9 +20,9 @@ class Home extends React.Component {
     const singleLink = '/stuff/12345'; // ${scat.id} for example
     return (
       <div className="Home">
-        <h1>Home</h1>
-        <button className="btn btn-primary" onClick={this.editEvent}>Edit</button>
-        <Link to={singleLink}>View Single</Link>
+        <h1 className="homeH1">Home</h1>
+        <button className="btn btn-primary editButton" onClick={this.editEvent}>Edit</button>
+        <Link to={singleLink} className="Link">View Single</Link>
       </div>
     );
   }

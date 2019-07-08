@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import mystuffShape from '../../helpers/propz/mystuffShape';
 
+import './SingleItem.scss';
+
 class SingleItem extends React.Component {
   static propTypes = {
     thing: PropTypes.arrayOf(mystuffShape.mystuffShape),
@@ -10,15 +12,14 @@ class SingleItem extends React.Component {
 
   render() {
     const { item } = this.props;
-    console.error(this.props.item);
     return (
-      <div className="Singleitem">
-        <p>{ item.name }</p>
-        <p>{ item.description }</p>
-        <p>{ item.description }</p>
-        <img src={ item.imageUrl } alt="a thing about an antique" />
-        <p>Price: { item.price }</p>
-        <p>HIISDFSD</p>
+      <div className="col-6">
+        <div className="SingleItem card">
+          <p className="itemName">{ item.name }</p>
+          <p className="itemDescription">{ item.description }</p>
+          <img className="itemImg" src={ item.imageUrl } alt="a thing about an antique" />
+          <p className="itemPrice" >Price: { item.price }</p>
+        </div>
       </div>
     );
   }
