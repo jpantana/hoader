@@ -1,0 +1,13 @@
+.Item {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameWidth {
+  min-width: 30em !important;
+  max-width: 30em !important;
+}
+
+.itemBreakout {
+  margin-left: auto!important;
+}

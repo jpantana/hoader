@@ -1,0 +1,29 @@
+.SingleItem {
+  display: block;
+  width: 35em !important;
+  height: 42em !important;
+  overflow: hidden;
+  margin: 3em;
+  // margin-right: auto;
+}
+
+.itemName {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.itemDescription {
+  text-align: center;
+}
+
+.itemPrice {
+  text-align: center;
+}
+
+.itemImg {
+  margin: auto;
+  width: 60% !important;
+  object-fit: cover !important;
+  // width: 100px !important;
+  // height: 200px !important;
+}
