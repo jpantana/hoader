@@ -1,25 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import mystuffShape from '../../helpers/propz/mystuffShape';
 
 import './SingleItem.scss';
-import mystuffData from '../../helpers/data/mystuffData';
 
 class SingleItem extends React.Component {
   static propTypes = {
     thing: PropTypes.arrayOf(mystuffShape.mystuffShape),
+    deleteItem: PropTypes.func.isRequired,
   }
 
   deleteEvent = (e) => {
     e.preventDefault();
-    mystuffData.deleteStuff(this.props.item.id)
-      .then()
-      .catch(err => console.error('nothing deleted', err));
+    const { item, deleteItem } = this.props;
+    deleteItem(item.id);
   };
 
   render() {
     const { item } = this.props;
+    const editLink = `/edit/${item.id}`;
     return (
       <div className="col-6">
         <div className="SingleItem card">
@@ -27,7 +28,7 @@ class SingleItem extends React.Component {
           <p className="itemDescription">{ item.description }</p>
           <img className="itemImg" src={ item.imageUrl } alt="a thing about an antique" />
           <p className="itemPrice" >Price: { item.price }</p>
-          <i className="far fa-edit"></i>
+          <Link to={editLink}><i className="far fa-edit"></i></Link>
           <i onClick={ this.deleteEvent } className="far fa-trash-alt"></i>
         </div>
       </div>

@@ -16,9 +16,18 @@ const getMyStuff = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const getSingleItem = itemId => axios.get(`${baseUrl}/myStuff/${itemId}.json`);
+
 const addNewStuff = newItem => axios.post(`${baseUrl}/myStuff.json`, newItem);
 
 const deleteStuff = itemId => axios.delete(`${baseUrl}/myStuff/${itemId}.json`);
 
+const putItem = (updatedItem, itemId) => axios.put(`${baseUrl}/myStuff/${itemId}.json`, updatedItem);
 
-export default { getMyStuff, addNewStuff, deleteStuff };
+export default {
+  getMyStuff,
+  addNewStuff,
+  deleteStuff,
+  getSingleItem,
+  putItem,
+};

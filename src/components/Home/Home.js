@@ -7,7 +7,7 @@ import './Home.scss';
 
 class Home extends React.Component {
   state = {
-    myStuff: {},
+    myStuff: [],
   }
 
   editEvent = (e) => {
