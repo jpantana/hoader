@@ -16,18 +16,32 @@ class MyStuff extends React.Component {
     myStuff: [],
   }
 
-  componentWillMount() {
+  getStuff = () => {
     mystuffData.getMyStuff()
       .then((myStuff) => {
         this.setState({ myStuff });
       })
       .catch(err => console.error('no stuff for you', err));
+  };
+
+  componentDidMount() {
+    this.getStuff();
   }
+
+  deleteItem = (itemId) => {
+    mystuffData.deleteStuff(itemId)
+      .then(() => this.getStuff())
+      .catch(err => console.error('nothing deleted', err));
+  };
 
   render() {
     const { myStuff } = this.state;
-    const makeStuff = myStuff.map(thing => (
-      <Item key={ thing.id } thing={ thing } />
+    const makeStuff = myStuff.map(item => (
+      <Item
+        key={ item.id }
+        item={ item }
+        deleteItem={this.deleteItem}
+      />
     ));
     return (
       <div className="MyStuff">
