@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-// import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -11,7 +10,6 @@ import {
   Input,
 } from 'reactstrap';
 
-// import MyStuff from '../MyStuff/MyStuff';
 import mystuffData from '../../helpers/data/mystuffData';
 
 import './NewStuff.scss';
@@ -44,8 +42,8 @@ class NewStuff extends React.Component {
 
   formSubmit = (e) => {
     e.preventDefault();
-    const saveMe = { ...this.state.newItem }; // makes a copy so you don't directly modify the state
-    saveMe.uid = firebase.auth().currentUser.uid; // adds this key/value
+    const saveMe = { ...this.state.newItem };
+    saveMe.uid = firebase.auth().currentUser.uid;
     mystuffData.addNewStuff(saveMe)
       .then(() => {
         this.props.history.push('/stuff');
