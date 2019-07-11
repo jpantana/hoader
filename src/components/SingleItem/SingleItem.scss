@@ -1,25 +1,48 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import '../../styles/variables.scss';
 
 .SingleItem {
   display: block;
   width: 35em !important;
-  height: 42em !important;
   overflow: hidden;
   margin: 3em;
-  // margin-right: auto;
+  font-family: $font1;
+  border: 1px solid $darkGreen;
+  border-radius: 7px;
+  flex-direction: column;
+  justify-content: center;
+  font-family: $font1;
+  background-color: $lightGreen;
+  padding: 20px;
+  box-shadow: 3px 3px 5px lightgrey;
+  margin: auto;
+  margin-top: 2em;
+  color: $darkGreen;
+  font-weight: 600;
+  box-shadow: 2px 2px 5px lightgray;
 }
 
 .itemName {
   font-size: 2.5em;
   text-align: center;
+  color: $darkGreen;
+  text-shadow: 2px 2px 4px rgb(214, 214, 214);
+  text-transform: uppercase;
+
 }
 
 .itemDescription {
   text-align: center;
+  color: $black;
+  letter-spacing: none;
+  text-shadow: none;
 }
 
 .itemPrice {
   text-align: center;
+  margin-top: 20px;
+  color: $black;
+  text-shadow: none;
 }
 
 .itemImg {
@@ -28,4 +51,24 @@
   object-fit: cover !important;
   // width: 100px !important;
   // height: 200px !important;
+}
+
+.editDeleteDiv {
+  margin: auto;
+}
+
+.far {
+  color: $darkGreen;
+  padding: 5px;
+  margin-bottom: 20px;
+  // margin: auto !important;
+}
+
+.fa-trash-alt {
+  margin-right: auto;
+}
+
+a {
+  margin-left: auto !important;
+
 }

@@ -42,17 +42,17 @@ class MyNavbar extends React.Component {
         return (
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink tag={RRNavLink} to="/home">Home</NavLink>
+            <NavLink className="navLink hvr-shadow hvr-underline-reveal" tag={RRNavLink} to="/home">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={RRNavLink} to="/new">New Stuff</NavLink>
+            <NavLink className="navLink hvr-shadow hvr-underline-reveal" tag={RRNavLink} to="/new">Add Stuff</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={RRNavLink} to="/stuff">Stuff</NavLink>
+            <NavLink className="navLink hvr-shadow hvr-underline-reveal" tag={RRNavLink} to="/stuff">My Stuff</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink onClick={this.logMeOut} href="https://github.com/reactstrap/reactstrap">Logout</NavLink>
-          </NavItem>>
+            <NavLink className="navLink hvr-shadow  hvr-underline-reveal" onClick={this.logMeOut} href="https://github.com/reactstrap/reactstrap">Logout</NavLink>
+          </NavItem>
         </Nav>
         );
       }
@@ -61,8 +61,8 @@ class MyNavbar extends React.Component {
 
     return (
       <div className="MyNavbar">
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Hoarder</NavbarBrand>
+        <Navbar className="navBar" expand="md">
+          <NavbarBrand className="navBarBrand" href="/">Hoarder</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             {buildNavbar()}

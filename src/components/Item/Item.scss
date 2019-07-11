@@ -1,6 +1,10 @@
+@import '../../styles/variables.scss';
+
 .Item {
   display: flex;
   flex-direction: row;
+  margin: 15px;
+  font-family: $font1 !important;
 }
 
 .nameWidth {
@@ -10,4 +14,10 @@
 
 .itemBreakout {
   margin-left: auto!important;
+}
+
+.itemHeader {
+  background-color: $white !important;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px $darkGreen;
 }

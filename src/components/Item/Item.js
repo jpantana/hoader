@@ -30,7 +30,7 @@ class Item extends React.Component {
       <div className="Item" onClick={ singleItem }>
         <div className="col nameWidth">
           <div className="card">
-            <h3 id={ item.id } className="card-header">{ item.name }</h3>
+            <h3 id={ item.id } className="card-header itemHeader">{ item.name }</h3>
           </div>
         </div>
         <div className="itemBreakout">{ (this.state.isClicked === true ? <SingleItem

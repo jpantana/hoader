@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-// import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -11,8 +10,8 @@ import {
   Input,
 } from 'reactstrap';
 
-// import MyStuff from '../MyStuff/MyStuff';
 import mystuffData from '../../helpers/data/mystuffData';
+// import format from '../../helpers/format';
 
 import './NewStuff.scss';
 
@@ -28,7 +27,7 @@ class NewStuff extends React.Component {
     newItem: defaultState,
   }
 
-  formFieldStringState = (name, e) => {
+  formFieldStringState = (name, e, price) => {
     const tempItem = { ...this.state.newItem };
     tempItem[name] = e.target.value;
     this.setState({ newItem: tempItem });
@@ -42,10 +41,17 @@ class NewStuff extends React.Component {
 
   priceChange = e => this.formFieldStringState('price', e);
 
+  // priceConvert = (e) => {
+  //   // const eNum = (e.target.value * 1);
+  //   // const numFormat = format.convertPrice(eNum);
+  //   this.priceChange(e);
+  // };
+
+
   formSubmit = (e) => {
     e.preventDefault();
-    const saveMe = { ...this.state.newItem }; // makes a copy so you don't directly modify the state
-    saveMe.uid = firebase.auth().currentUser.uid; // adds this key/value
+    const saveMe = { ...this.state.newItem };
+    saveMe.uid = firebase.auth().currentUser.uid;
     mystuffData.addNewStuff(saveMe)
       .then(() => {
         this.props.history.push('/stuff');
@@ -102,7 +108,7 @@ class NewStuff extends React.Component {
                 onChange={this.priceChange}
               />
             </FormGroup>
-            <Button id="newItemEntry">Save</Button>
+            <Button id="newItemEntryBtn">Save</Button>
           </Form>
       </div>
     );

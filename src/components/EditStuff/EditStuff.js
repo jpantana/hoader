@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-// import { Redirect } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -11,7 +10,6 @@ import {
   Input,
 } from 'reactstrap';
 
-// import MyStuff from '../MyStuff/MyStuff';
 import mystuffData from '../../helpers/data/mystuffData';
 
 import './EditStuff.scss';
@@ -80,7 +78,7 @@ class EditStuff extends React.Component {
             <FormGroup>
               <Label for="itemDescription">Item Description</Label>
               <Input
-                type="textarea"
+                type="text"
                 name="itemDescription"
                 id="itemDescriptionInput"
                 placeholder="Item description..."
@@ -110,7 +108,7 @@ class EditStuff extends React.Component {
                 onChange={this.priceChange}
               />
             </FormGroup>
-            <Button id="newItemEntry">Save</Button>
+            <Button id="newItemEntry">Update</Button>
           </Form>
       </div>
     );
@@ -118,21 +116,3 @@ class EditStuff extends React.Component {
 }
 
 export default EditStuff;
-
-// import React from 'react';
-
-// import './EditStuff.scss';
-
-// class EditStuff extends React.Component {
-//   render() {
-//     const editId = this.props.match.params.id;
-//     return (
-//       <div>
-//         <h1>Edit Stuff</h1>
-//         <h2>The edit id is: {editId}</h2>
-//       </div>
-//     );
-//   }
-// }
-
-// export default EditStuff;
