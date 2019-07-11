@@ -78,7 +78,7 @@ class EditStuff extends React.Component {
             <FormGroup>
               <Label for="itemDescription">Item Description</Label>
               <Input
-                type="textarea"
+                type="text"
                 name="itemDescription"
                 id="itemDescriptionInput"
                 placeholder="Item description..."
