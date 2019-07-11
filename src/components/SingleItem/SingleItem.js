@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import PropTypes from 'prop-types';
+
+import format from '../../helpers/format';
 import mystuffShape from '../../helpers/propz/mystuffShape';
 
 import './SingleItem.scss';
@@ -23,13 +24,15 @@ class SingleItem extends React.Component {
     const editLink = `/edit/${item.id}`;
     return (
       <div className="col-6">
-        <div className="SingleItem card">
+        <div className="SingleItem card justify-content-center">
           <p className="itemName">{ item.name }</p>
           <p className="itemDescription">{ item.description }</p>
           <img className="itemImg" src={ item.imageUrl } alt="a thing about an antique" />
-          <p className="itemPrice" >Price: { item.price }</p>
-          <Link to={editLink}><i className="far fa-edit"></i></Link>
-          <i onClick={ this.deleteEvent } className="far fa-trash-alt"></i>
+          <p className="itemPrice" >Price: {format.formatPrice(item.price)}</p>
+          <div className="row editDeleteDiv">
+            <Link to={editLink}><i className="far fa-edit"></i></Link>
+            <i onClick={ this.deleteEvent } className="far fa-trash-alt"></i>
+          </div>
         </div>
       </div>
     );

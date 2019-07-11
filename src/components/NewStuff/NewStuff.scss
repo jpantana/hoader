@@ -1,9 +1,26 @@
+@import '../../styles/variables.scss';
+
 .NewStuff {
   display: block;
-  margin: auto;
-  margin-top: 3em;
-  border: 1px solid black;
+  border: 1px solid $darkGreen;
   border-radius: 7px;
+  flex-direction: column;
+  width: 40em;
+  justify-content: center;
+  font-family: $font1;
+  letter-spacing: .2em;
+  background-color: $lightGreen;
   padding: 20px;
-  width: 40%;
+  box-shadow: 3px 3px 5px lightgrey;
+  margin: auto;
+  margin-top: 2em;
+  color: $darkGreen;
+  font-weight: 600;
+  box-shadow: 2px 2px 5px lightgray;
+  text-shadow: 2px 2px 4px rgb(214, 214, 214);
+}
+
+#newItemEntryBtn {
+  color: $white;
+  background-color: $darkGreen;
 }

@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 
 import mystuffData from '../../helpers/data/mystuffData';
+// import format from '../../helpers/format';
 
 import './NewStuff.scss';
 
@@ -26,7 +27,7 @@ class NewStuff extends React.Component {
     newItem: defaultState,
   }
 
-  formFieldStringState = (name, e) => {
+  formFieldStringState = (name, e, price) => {
     const tempItem = { ...this.state.newItem };
     tempItem[name] = e.target.value;
     this.setState({ newItem: tempItem });
@@ -39,6 +40,13 @@ class NewStuff extends React.Component {
   imageLinkChange = e => this.formFieldStringState('imageUrl', e);
 
   priceChange = e => this.formFieldStringState('price', e);
+
+  // priceConvert = (e) => {
+  //   // const eNum = (e.target.value * 1);
+  //   // const numFormat = format.convertPrice(eNum);
+  //   this.priceChange(e);
+  // };
+
 
   formSubmit = (e) => {
     e.preventDefault();
@@ -100,7 +108,7 @@ class NewStuff extends React.Component {
                 onChange={this.priceChange}
               />
             </FormGroup>
-            <Button id="newItemEntry">Save</Button>
+            <Button id="newItemEntryBtn">Save</Button>
           </Form>
       </div>
     );

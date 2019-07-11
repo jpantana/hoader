@@ -108,7 +108,7 @@ class EditStuff extends React.Component {
                 onChange={this.priceChange}
               />
             </FormGroup>
-            <Button id="newItemEntry">Save</Button>
+            <Button id="newItemEntry">Update</Button>
           </Form>
       </div>
     );

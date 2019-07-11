@@ -1,3 +1,20 @@
+@import '../../styles/variables.scss';
+
 .EditStuff {
   display: block;
+
+  flex-direction: column;
+  width: auto;
+  padding: 10px;
+  font-family: $font1;
+  // text-shadow: 2px 2px 4px lightgrey;
+  background-color: $lightGreen;
+  padding: 20px;
+  box-shadow: 3px 3px 5px lightgrey;
+  margin-top: 2em;
+  color: $darkGreen;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 4px lightgray;
+  border-radius: 10px;
 }

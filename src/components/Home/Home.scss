@@ -1,13 +1,38 @@
-.Home {
-  display: flex;
-  flex-flow: row nowrap;
-  width: auto;
-  justify-content: space-around;
-  padding: 10px;
+@import '../../styles/variables.scss';
 
+.Home {
+  flex-direction: column;
+  width: auto;
+  justify-content: center;
+  padding: 10px;
+  font-family: $font1;
+  letter-spacing: .2em;
+  text-shadow: 2px 2px 4px lightgrey;
+  background-color: $lightGreen;
+  padding: 20px;
+  box-shadow: 3px 3px 5px lightgrey;
+  margin-top: 2em;
+  color: $darkGreen;
+  font-weight: 600;
 }
 
 .homeH1, .editButton, .Link {
   margin: auto;
-  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+img {
+  box-shadow: 3px 3px 5px $black;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.homeDescrip {
+  text-shadow: none;
+  color: $black;
+  font-size: 14px;
+  letter-spacing: 0;
+  width: 30em;
+  margin: auto;
+  margin-top: 25px;
 }
