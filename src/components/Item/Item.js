@@ -8,7 +8,7 @@ import './Item.scss';
 
 class Item extends React.Component {
   static propTypes = {
-    item: PropTypes.objectOf(mystuffShape.mystuffShape),
+    item: mystuffShape.mystuffShape,
     deleteItem: PropTypes.func.isRequired,
   }
 

@@ -4,7 +4,7 @@ const mystuffShape = PropTypes.shape({
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
 });
 
